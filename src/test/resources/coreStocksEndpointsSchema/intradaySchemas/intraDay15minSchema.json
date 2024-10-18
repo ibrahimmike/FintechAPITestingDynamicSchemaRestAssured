@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Meta Data": {
+      "type": "object",
+      "properties": {
+        "1. Information": {
+          "type": "string"
+        },
+        "2. Symbol": {
+          "type": "string"
+        },
+        "3. Last Refreshed": {
+          "type": "string"
+        },
+        "4. Interval": {
+          "type": "string"
+        },
+        "5. Output Size": {
+          "type": "string"
+        },
+        "6. Time Zone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "1. Information",
+        "2. Symbol",
+        "3. Last Refreshed",
+        "4. Interval",
+        "5. Output Size",
+        "6. Time Zone"
+      ]
+    },
+    "Time Series (15min)": {
+      "type": "object",
+      "patternProperties": {
+        "^\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$": {
+
+
+          "type": "object",
+          "properties": {
+            "1. open": {
+              "type": "string"
+            },
+            "2. high": {
+              "type": "string"
+            },
+            "3. low": {
+              "type": "string"
+            },
+            "4. close": {
+              "type": "string"
+            },
+            "5. volume": {
+              "type": "string"
+            }
+          },
+
+          "required": [
+            "1. open",
+            "2. high",
+            "3. low",
+            "4. close",
+            "5. volume"
+          ]
+
+
+        }
+
+      },
+      "uniqueItems": false,
+      "unevaluatedProperties": false,
+      "maxProperties": 100,
+      "minProperties": 1
+    }
+
+  },
+  "required": ["Meta Data", "Time Series (15min)"]
+}

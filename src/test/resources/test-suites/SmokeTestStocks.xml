@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeTest"   >
+    <listeners>
+        <listener class-name="listeners.ListenersClass"/>
+
+    </listeners>
+    <test name = "StocksEndpoints"  thread-count="6" parallel="classes" >
+        <classes>
+            <class name="testClasses.stocksEndpointsTests.StocksSchemaVerificationTests"/>
+            <class name="testClasses.stocksEndpointsTests.StocksEndPointIntradayTests"/>
+        </classes>
+
+
+
+    </test>
+
+</suite>
